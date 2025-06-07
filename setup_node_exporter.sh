@@ -71,8 +71,7 @@ WantedBy=sockets.target
 EOF
 
 mkdir -p /var/lib/"$USER"
-echo '"OPTIONS="--collector.textfile.directory /var/lib/node_exporter/textfile_collector'
-> /var/lib/"$USER"/textfile_collector
+echo '"OPTIONS="--collector.textfile.directory /var/lib/node_exporter/textfile_collector' > /var/lib/"$USER"/textfile_collector
 
 echo "---> Socket file written in $SOCKET_PATH. <---"
 chown -R "$USER":"$USER" /var/lib/"$USER"
