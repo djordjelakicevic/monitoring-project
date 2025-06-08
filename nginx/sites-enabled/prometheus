@@ -1,0 +1,12 @@
+upstream prometheus {
+        server 10.215.213.231:9090;
+}
+
+server {
+        listen 80;
+        server_name prometheus-djole.com;
+
+        location / {
+                proxy_pass http://prometheus;
+        }
+}
